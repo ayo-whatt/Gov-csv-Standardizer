@@ -1,0 +1,149 @@
+{
+  "source_file": "mgnrega_district_monthly_up_fy2018-19.csv",
+  "columns": [
+    {
+      "name": "fin_year",
+      "type": "string"
+    },
+    {
+      "name": "month",
+      "type": "string"
+    },
+    {
+      "name": "state_code",
+      "type": "string"
+    },
+    {
+      "name": "state_name",
+      "type": "string"
+    },
+    {
+      "name": "district_code",
+      "type": "string"
+    },
+    {
+      "name": "district_name",
+      "type": "string"
+    },
+    {
+      "name": "Approved_Labour_Budget",
+      "type": "integer"
+    },
+    {
+      "name": "Average_Wage_rate_per_day_per_person",
+      "type": "decimal"
+    },
+    {
+      "name": "Average_days_of_employment_provided_per_Household",
+      "type": "integer"
+    },
+    {
+      "name": "Differently_abled_persons_worked",
+      "type": "integer"
+    },
+    {
+      "name": "Material_and_skilled_Wages",
+      "type": "decimal"
+    },
+    {
+      "name": "Number_of_Completed_Works",
+      "type": "integer"
+    },
+    {
+      "name": "Number_of_GPs_with_NIL_exp",
+      "type": "integer"
+    },
+    {
+      "name": "Number_of_Ongoing_Works",
+      "type": "integer"
+    },
+    {
+      "name": "Persondays_of_Central_Liability_so_far",
+      "type": "integer"
+    },
+    {
+      "name": "SC_persondays",
+      "type": "integer"
+    },
+    {
+      "name": "SC_workers_against_active_workers",
+      "type": "integer"
+    },
+    {
+      "name": "ST_persondays",
+      "type": "integer"
+    },
+    {
+      "name": "ST_workers_against_active_workers",
+      "type": "integer"
+    },
+    {
+      "name": "Total_Adm_Expenditure",
+      "type": "decimal"
+    },
+    {
+      "name": "Total_Exp",
+      "type": "decimal"
+    },
+    {
+      "name": "Total_Households_Worked",
+      "type": "integer"
+    },
+    {
+      "name": "Total_Individuals_Worked",
+      "type": "integer"
+    },
+    {
+      "name": "Total_No_of_Active_Job_Cards",
+      "type": "integer"
+    },
+    {
+      "name": "Total_No_of_Active_Workers",
+      "type": "integer"
+    },
+    {
+      "name": "Total_No_of_HHs_completed_100_Days_of_Wage_Employment",
+      "type": "integer"
+    },
+    {
+      "name": "Total_No_of_JobCards_issued",
+      "type": "integer"
+    },
+    {
+      "name": "Total_No_of_Workers",
+      "type": "integer"
+    },
+    {
+      "name": "Total_No_of_Works_Takenup",
+      "type": "integer"
+    },
+    {
+      "name": "Wages",
+      "type": "decimal"
+    },
+    {
+      "name": "Women_Persondays",
+      "type": "integer"
+    },
+    {
+      "name": "percent_of_Category_B_Works",
+      "type": "integer"
+    },
+    {
+      "name": "percent_of_Expenditure_on_Agriculture_Allied_Works",
+      "type": "decimal"
+    },
+    {
+      "name": "percent_of_NRM_Expenditure",
+      "type": "decimal"
+    },
+    {
+      "name": "percentage_payments_gererated_within_15_days",
+      "type": "decimal"
+    },
+    {
+      "name": "Remarks",
+      "type": "string"
+    }
+  ]
+}
