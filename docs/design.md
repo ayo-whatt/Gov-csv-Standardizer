@@ -6,7 +6,7 @@ Version one standardizes one raw file: district-wise MGNREGA monthly data for Ut
 
 ## Natural key
 
-`(fin_year, month, district_code)`. The profile found zero duplicates on this key. The key uses `district_code` rather than `district_name`, because names are more likely to change between releases.
+`(period, district_code)`. The profile found zero duplicates on this key. The key uses `district_code` rather than `district_name`, because names are more likely to change between releases.
 
 ## Month handling
 
@@ -33,3 +33,29 @@ The financial year runs April to March. Months April through December fall in th
 
 - **Drift testing on real data.** Drift detection needs a second release of this dataset. Until one is found, use a test fixture with one renamed column.
 - **Multi-state data.** The project's stated problem includes misspelled state names, and this file doesn't show that. Decide whether to add a second, multi-state file before the README describes the project's full scope.
+
+## Output contract
+
+The pipeline writes one processed file per run, `data/processed/mgnrega_district_monthly_up.csv`, and overwrites it on each run. Running the pipeline twice on the same input must produce a byte-identical file.
+
+**Columns, in this order (35 total):**
+1. `period`: first day of the month in ISO format, such as `2018-11-01`. Derived from `fin_year` and `month` using the April rule.
+2. `state_code`, `state_name`, `district_code`, `district_name`: as published. Codes stay strings.
+3. The 29 measure columns, in raw-file order, with names unchanged.
+4. `Remarks`: kept as text, unchanged.
+
+`fin_year` and `month` are removed from the output because `period` replaces them. The raw file keeps both, so nothing is lost.
+
+**Types:** codes and names are strings. Measures follow `config/expected_schema.json`: integer columns become `Int64`, decimal columns become `float64`, and no values are rounded.
+
+**Sort order:** `period` ascending, then `district_code` ascending. The output has no index column.
+
+**Natural key:** `(period, district_code)`.
+
+**Rejected rows** go to `data/quarantine/mgnrega_district_monthly_up_rejects.csv`. This file has every raw column plus `source_row` (the 1-based data row, excluding the header) and `reject_reason`. Each run deletes the old reject file first and writes a new one only if rows were rejected, so a stale file can't be mistaken for a current one.
+
+**Halted runs:** if drift halts a file, the run deletes any existing processed output and writes `data/quarantine/mgnrega_district_monthly_up_drift_report.txt`, which lists the difference.
+
+**Exit codes:** 0 for a clean run, 2 for a run that completed with rejected rows, 1 for a halted run.
+
+**Run summary:** each run logs rows read, rows written, rows quarantined, and drift status.
