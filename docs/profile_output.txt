@@ -1,0 +1,244 @@
+﻿== File ==
+path: data\raw\mgnrega_district_glance_2023-04_to_2023-08.csv
+size: 213,496 bytes
+encoding: ascii
+BOM present: False
+delimiter: ','
+header row index: 0
+
+== First 10 raw lines (repr shows hidden characters) ==
+0: 'fin_year,month,state_code,state_name,district_code,district_name,Approved_Labour_Budget,Average_Wage_rate_per_day_per_person,Average_days_of_employment_provided_per_Household,Differently_abled_persons_worked,Material_and_skilled_Wages,Number_of_Completed_Works,Number_of_GPs_with_NIL_exp,Number_of_Ongoing_Works,Persondays_of_Central_Liability_so_far,SC_persondays,SC_workers_against_active_workers,ST_persondays,ST_workers_against_active_workers,Total_Adm_Expenditure,Total_Exp,Total_Households_Worked,Total_Individuals_Worked,Total_No_of_Active_Job_Cards,Total_No_of_Active_Workers,Total_No_of_HHs_completed_100_Days_of_Wage_Employment,Total_No_of_JobCards_issued,Total_No_of_Workers,Total_No_of_Works_Takenup,Wages,Women_Persondays,percent_of_Category_B_Works,percent_of_Expenditure_on_Agriculture_Allied_Works,percent_of_NRM_Expenditure,percentage_payments_gererated_within_15_days,Remarks\n'
+1: '2018-2019,Nov,31,UTTAR PRADESH,3112,SAHARANPUR,663518,167.1050075,19,71,494.9776362,1999,1,3129,627479,266140,61276,1073,205,70.93955,1614.466016,32760,38289,79881,123874,78,118395,173833,5128,1048.54883,196048,14,59.15,89.7,108.2,NA\n'
+2: '2018-2019,Nov,31,UTTAR PRADESH,3117,BULANDSHAHR,169192,164.291153,18,10,52.42860527,1444,68,1551,185035,42914,11156,0,0,14.52775,370.9524903,10176,11196,29376,41578,33,106804,138976,2995,303.996135,48439,36,78.05,92.97,125.46,NA\n'
+3: '2018-2019,Nov,31,UTTAR PRADESH,3118,ALIGARH,1247098,172.3188473,29,92,2332.747561,3815,8,3118,1398500,448854,46286,1611,161,163.00284,4905.629481,48219,53626,104826,150174,84,193363,262324,6933,2409.87908,332341,24,60.22,69.88,100.66,NA\n'
+4: '2018-2019,Nov,31,UTTAR PRADESH,3127,SHAHJAHANPUR,2121400,169.7450544,26,164,1844.402053,10050,1,14141,1553388,488677,86689,470,81,156.08508,4637.286438,59424,69283,156132,259553,142,309183,459452,24191,2636.799305,343025,73,51.46,36.84,121.21,NA\n'
+5: '2018-2019,Nov,31,UTTAR PRADESH,3140,LALITPUR,2802826,163.5723966,41,108,2322.052672,4183,0,8436,2577910,626118,60781,210136,18674,166.58881,6705.390652,62382,89965,117739,235194,2423,174854,330626,12619,4216.74917,952687,59,77.33,76.8,100.55,NA\n'
+6: '2018-2019,Nov,31,UTTAR PRADESH,3145,PRAYAGRAJ,3139140,169.9496456,32,178,2099.754719,26434,0,25329,2551513,1275261,162985,2480,101,313.27703,6749.319049,77918,99102,178858,298653,263,368104,569725,51763,4336.2873,989798,82,71.74,31.54,113.31,NA\n'
+7: '2018-2019,Sep,31,UTTAR PRADESH,3111,RAMPUR,966773,189.2142548,25,33,712.7255096,1426,24,3500,667607,138332,28308,1200,151,75.6596,2051.59272,25895,27981,85642,120427,15,159863,210969,4926,1263.20761,112457,52,68.77,67.12,143.38,NA\n'
+8: '2018-2019,Sep,31,UTTAR PRADESH,3122,ETAH,1208833,171.612241,31,45,361.8371061,2522,10,6829,773804,223281,33645,189,12,57.32293,1747.102421,24589,27562,68329,109654,64,149350,219662,9351,1327.942385,200186,73,79.34,69.32,138.25,NA\n'
+9: '2018-2019,Sep,31,UTTAR PRADESH,3133,RAE BARELI,1764520,163.7058779,26,128,2874.412759,15257,0,18525,1842568,592736,115787,4072,825,214.95712,6105.761999,69139,82074,178360,327352,147,311646,517401,33782,3016.39212,728238,66,40.97,31.78,100.44,NA\n'
+
+== Shape ==
+rows: 900
+columns: 36
+
+== Column names (repr shows spaces and casing) ==
+0: 'fin_year'
+1: 'month'
+2: 'state_code'
+3: 'state_name'
+4: 'district_code'
+5: 'district_name'
+6: 'Approved_Labour_Budget'
+7: 'Average_Wage_rate_per_day_per_person'
+8: 'Average_days_of_employment_provided_per_Household'
+9: 'Differently_abled_persons_worked'
+10: 'Material_and_skilled_Wages'
+11: 'Number_of_Completed_Works'
+12: 'Number_of_GPs_with_NIL_exp'
+13: 'Number_of_Ongoing_Works'
+14: 'Persondays_of_Central_Liability_so_far'
+15: 'SC_persondays'
+16: 'SC_workers_against_active_workers'
+17: 'ST_persondays'
+18: 'ST_workers_against_active_workers'
+19: 'Total_Adm_Expenditure'
+20: 'Total_Exp'
+21: 'Total_Households_Worked'
+22: 'Total_Individuals_Worked'
+23: 'Total_No_of_Active_Job_Cards'
+24: 'Total_No_of_Active_Workers'
+25: 'Total_No_of_HHs_completed_100_Days_of_Wage_Employment'
+26: 'Total_No_of_JobCards_issued'
+27: 'Total_No_of_Workers'
+28: 'Total_No_of_Works_Takenup'
+29: 'Wages'
+30: 'Women_Persondays'
+31: 'percent_of_Category_B_Works'
+32: 'percent_of_Expenditure_on_Agriculture_Allied_Works'
+33: 'percent_of_NRM_Expenditure'
+34: 'percentage_payments_gererated_within_15_days'
+35: 'Remarks'
+
+== Column profile ==
+'fin_year': blank=0, distinct=1, examples=['2018-2019']
+'month': blank=0, distinct=12, examples=['Nov', 'Sep', 'March']
+'state_code': blank=0, distinct=1, examples=['31']
+'state_name': blank=0, distinct=1, examples=['UTTAR PRADESH']
+'district_code': blank=0, distinct=75, examples=['3112', '3117', '3118']
+'district_name': blank=0, distinct=75, examples=['SAHARANPUR', 'BULANDSHAHR', 'ALIGARH']
+'Approved_Labour_Budget': blank=0, distinct=892, examples=['663518', '169192', '1247098']
+'Average_Wage_rate_per_day_per_person': blank=0, distinct=895, examples=['167.1050075', '164.291153', '172.3188473']
+'Average_days_of_employment_provided_per_Household': blank=0, distinct=48, examples=['19', '18', '29']
+'Differently_abled_persons_worked': blank=0, distinct=259, examples=['71', '10', '92']
+'Material_and_skilled_Wages': blank=0, distinct=701, examples=['494.9776362', '52.42860527', '2332.747561']
+'Number_of_Completed_Works': blank=0, distinct=863, examples=['1999', '1444', '3815']
+'Number_of_GPs_with_NIL_exp': blank=0, distinct=200, examples=['1', '68', '8']
+'Number_of_Ongoing_Works': blank=0, distinct=870, examples=['3129', '1551', '3118']
+'Persondays_of_Central_Liability_so_far': blank=0, distinct=894, examples=['627479', '185035', '1398500']
+'SC_persondays': blank=0, distinct=890, examples=['266140', '42914', '448854']
+'SC_workers_against_active_workers': blank=0, distinct=851, examples=['61276', '11156', '46286']
+'ST_persondays': blank=0, distinct=763, examples=['1073', '0', '1611']
+'ST_workers_against_active_workers': blank=0, distinct=282, examples=['205', '0', '161']
+'Total_Adm_Expenditure': blank=0, distinct=609, examples=['70.93955', '14.52775', '163.00284']
+'Total_Exp': blank=0, distinct=895, examples=['1614.466016', '370.9524903', '4905.629481']
+'Total_Households_Worked': blank=0, distinct=886, examples=['32760', '10176', '48219']
+'Total_Individuals_Worked': blank=0, distinct=887, examples=['38289', '11196', '53626']
+'Total_No_of_Active_Job_Cards': blank=0, distinct=886, examples=['79881', '29376', '104826']
+'Total_No_of_Active_Workers': blank=0, distinct=886, examples=['123874', '41578', '150174']
+'Total_No_of_HHs_completed_100_Days_of_Wage_Employment': blank=0, distinct=429, examples=['78', '33', '84']
+'Total_No_of_JobCards_issued': blank=0, distinct=888, examples=['118395', '106804', '193363']
+'Total_No_of_Workers': blank=0, distinct=890, examples=['173833', '138976', '262324']
+'Total_No_of_Works_Takenup': blank=0, distinct=877, examples=['5128', '2995', '6933']
+'Wages': blank=0, distinct=895, examples=['1048.54883', '303.996135', '2409.87908']
+'Women_Persondays': blank=0, distinct=890, examples=['196048', '48439', '332341']
+'percent_of_Category_B_Works': blank=0, distinct=87, examples=['14', '36', '24']
+'percent_of_Expenditure_on_Agriculture_Allied_Works': blank=0, distinct=819, examples=['59.15', '78.05', '60.22']
+'percent_of_NRM_Expenditure': blank=0, distinct=831, examples=['89.7', '92.97', '69.88']
+'percentage_payments_gererated_within_15_days': blank=0, distinct=795, examples=['108.2', '125.46', '100.66']
+'Remarks': blank=0, distinct=1, examples=['NA']
+
+== Duplicate rows ==
+exact duplicates: 0
+
+== State / district / region columns ==
+
+'state_code': 1 distinct values
+      900  '31'
+
+'state_name': 1 distinct values
+      900  'UTTAR PRADESH'
+
+'district_code': 75 distinct values
+       12  '3112'
+       12  '3117'
+       12  '3118'
+       12  '3127'
+       12  '3140'
+       12  '3145'
+       12  '3111'
+       12  '3122'
+       12  '3133'
+       12  '3149'
+       12  '3150'
+       12  '3155'
+       12  '3175'
+       12  '3177'
+       12  '3178'
+       12  '3120'
+       12  '3123'
+       12  '3124'
+       12  '3128'
+       12  '3146'
+       12  '3147'
+       12  '3154'
+       12  '3158'
+       12  '3162'
+       12  '3163'
+       12  '3164'
+       12  '3131'
+       12  '3132'
+       12  '3139'
+       12  '3148'
+       12  '3152'
+       12  '3169'
+       12  '3173'
+       12  '3174'
+       12  '3176'
+       12  '3110'
+       12  '3130'
+       12  '3135'
+       12  '3144'
+       12  '3157'
+       12  '3159'
+       12  '3119'
+       12  '3126'
+       12  '3137'
+       12  '3141'
+       12  '3143'
+       12  '3171'
+       12  '3181'
+       12  '3109'
+       12  '3121'
+       12  '3136'
+       12  '3142'
+       12  '3160'
+       12  '3165'
+       12  '3180'
+       12  '3183'
+       12  '3115'
+       12  '3116'
+       12  '3151'
+       12  '3170'
+
+'district_name': 75 distinct values
+       12  'SAHARANPUR'
+       12  'BULANDSHAHR'
+       12  'ALIGARH'
+       12  'SHAHJAHANPUR'
+       12  'LALITPUR'
+       12  'PRAYAGRAJ'
+       12  'RAMPUR'
+       12  'ETAH'
+       12  'RAE BARELI'
+       12  'AYODHYA'
+       12  'SULTANPUR'
+       12  'DEORIA'
+       12  'BALRAMPUR'
+       12  'CHITRAKOOT'
+       12  'AMBEDKAR NAGAR'
+       12  'AGRA'
+       12  'MAINPURI'
+       12  'BUDAUN'
+       12  'KHERI'
+       12  'BAHRAICH'
+       12  'GONDA'
+       12  'GORAKHPUR'
+       12  'JAUNPUR'
+       12  'MIRZAPUR'
+       12  'SONBHADRA'
+       12  'GAUTAM BUDDHA NAGAR'
+       12  'UNNAO'
+       12  'LUCKNOW'
+       12  'JHANSI'
+       12  'BARABANKI'
+       12  'MAHARAJGANJ'
+       12  'AURAIYA'
+       12  'SANT RAVIDAS NAGAR'
+       12  'SANT KABEER NAGAR'
+       12  'SHRAVASTI'
+       12  'MORADABAD'
+       12  'HARDOI'
+       12  'ETAWAH'
+       12  'PRATAPGARH'
+       12  'AZAMGARH'
+       12  'BALLIA'
+       12  'MATHURA'
+       12  'PILIBHIT'
+       12  'KANPUR NAGAR'
+       12  'HAMIRPUR'
+       12  'FATEHPUR'
+       12  'CHANDAULI'
+       12  'AMETHI'
+       12  'BIJNOR'
+       12  'FIROZABAD'
+       12  'KANPUR DEHAT'
+       12  'BANDA'
+       12  'GHAZIPUR'
+       12  'BAGHPAT'
+       12  'KASHGANJ'
+       12  'SHAMLI'
+       12  'MEERUT'
+       12  'GHAZIABAD'
+       12  'SIDDHARTH NAGAR'
+       12  'KAUSHAMBI'
+
+== Date-like columns: value shapes (9 = digit, a = letter) ==
+
+'fin_year': 1 distinct shapes
+      900  '9999-9999'
+
+'month': 3 distinct shapes
+      600  'aaa'
+      150  'aaaaa'
+      150  'aaaa'
