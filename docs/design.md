@@ -22,12 +22,16 @@ The financial year runs April to March. Months April through December fall in th
 
 ## Failure behavior
 
-- Column added: log it and flag the file.
+- Column added: process the file normally. Leave the new column out of the output, since the output contract is fixed at 35 columns. Log the new column name and exit with code 3.
 - Column renamed or missing: halt, quarantine the whole file, and log the difference with a suggested match.
 - Unknown month spelling: quarantine that row.
 - Duplicate natural key: quarantine every copy and log the count.
 - Non-numeric value in a numeric column: quarantine that row with a reason.
 - `Remarks`: all 900 values are `NA` in this release. Keep the column as text.
+
+## Encoding
+
+The pipeline accepts UTF-8 files, with or without a byte order mark (BOM). The BOM is removed on read, so it never reaches the output. Any other encoding halts the run with a report naming the problem. The pipeline doesn't guess encodings, because a wrong guess silently corrupts names. The raw file is plain ASCII, which is valid UTF-8, so it passes this rule.
 
 ## Open decisions
 
@@ -56,6 +60,6 @@ The pipeline writes one processed file per run, `data/processed/mgnrega_district
 
 **Halted runs:** if drift halts a file, the run deletes any existing processed output and writes `data/quarantine/mgnrega_district_monthly_up_drift_report.txt`, which lists the difference.
 
-**Exit codes:** 0 for a clean run, 2 for a run that completed with rejected rows, 1 for a halted run.
+**Exit codes:** 0 for a clean run, 1 for a halted run, 2 for a run that completed with rejected rows, 3 for a run that completed with a new column flagged.
 
 **Run summary:** each run logs rows read, rows written, rows quarantined, and drift status.
