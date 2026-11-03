@@ -44,3 +44,15 @@ save(pd.concat([clean, dup_row], ignore_index=True), "duplicate_key.csv")
 bad_number = clean.copy()
 bad_number.loc[nov_3112, "Wages"] = "--"
 save(bad_number, "non_numeric.csv")
+
+# Encoding: UTF-8 with BOM -> accept and strip the BOM on read
+clean.to_csv(FIXTURES / "bom_utf8.csv", index=False, encoding="utf-8-sig")
+print("wrote bom_utf8.csv: UTF-8 with BOM")
+
+# Encoding: Windows-1252 bytes that are invalid UTF-8 -> halt
+# The baseline is pure ASCII, which is valid in any encoding, so this
+# fixture needs one accented character to test anything.
+cp1252 = clean.copy()
+cp1252.loc[cp1252["district_name"] == "BULANDSHAHR", "district_name"] = "BULANDSHÁHR"
+cp1252.to_csv(FIXTURES / "cp1252_accented.csv", index=False, encoding="cp1252")
+print("wrote cp1252_accented.csv: Windows-1252 bytes")
