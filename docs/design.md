@@ -28,6 +28,10 @@ The financial year runs April to March. Months April through December fall in th
 - Duplicate natural key: quarantine every copy and log the count.
 - Non-numeric value in a numeric column: quarantine that row with a reason.
 - `Remarks`: all 900 values are `NA` in this release. Keep the column as text.
+- Reordered columns: process normally, log the new order, exit 0. Columns are mapped by name, so the order doesn't change the output.
+- Blank value in a measure column: quarantine the row with reason "blank measure value", exit 2. A blank is never written as zero.
+- Ragged row (field count differs from the header): quarantine the row with reason "field count mismatch", exit 2. Field counts are checked before parsing, so pandas can't fill gaps silently.
+- Layout not comma-separated, or header not on the first line: halt with a report naming the problem, exit 1. Nothing is guessed.
 
 ## Encoding
 
