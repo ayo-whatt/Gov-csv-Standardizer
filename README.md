@@ -8,7 +8,7 @@ Open government datasets often have inconsistent column names, mixed date format
 
 ## Dataset
 
-District-wise MGNREGA Data at a Glance, 01.04.2023 to 31.08.2023, published on data.gov.in. The raw file is stored unedited in `data/raw/`. Source and license details are in `data/SOURCES.md`.
+District-wise MGNREGA Data at a Glance, 2018-19 , published on data.gov.in. The raw file is stored unedited in `data/raw/`. Source and license details are in `data/SOURCES.md`.
 
 ## Status
 
