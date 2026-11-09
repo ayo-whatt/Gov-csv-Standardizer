@@ -54,15 +54,15 @@ The pipeline writes one processed file per run, `data/processed/mgnrega_district
 
 `fin_year` and `month` are removed from the output because `period` replaces them. The raw file keeps both, so nothing is lost.
 
-**Types:** codes and names are strings. Measures follow `config/expected_schema.json`: integer columns become `Int64`, decimal columns become `float64`, and no values are rounded.
+**Types:** codes and names are strings. Measures follow `config/expected_schema.json`: integer columns become `Int64`, decimal columns become `float64`, and no values are rounded. Decimal values are written in float64 form, so a whole number such as 3 appears as 3.0. The value is unchanged. Accepted for version one.
 
 **Sort order:** `period` ascending, then `district_code` ascending. The output has no index column.
 
 **Natural key:** `(period, district_code)`.
 
-**Rejected rows** go to `data/quarantine/mgnrega_district_monthly_up_rejects.csv`. This file has every raw column plus `source_row` (the 1-based data row, excluding the header) and `reject_reason`. Each run deletes the old reject file first and writes a new one only if rows were rejected, so a stale file can't be mistaken for a current one.
+**Rejected rows** go to `data/quarantine/mgnrega_district_monthly_up_rejects.csv`. The file has `source_row` (the 1-based data row, excluding the header), `reject_reason`, and `raw_values` (the original fields joined by commas). `raw_values` is used because ragged rows don't map to columns. Each run deletes the old reject file first and writes a new one only if rows were rejected, so a stale file can't be mistaken for a current one.
 
-**Halted runs:** if drift halts a file, the run deletes any existing processed output and writes `data/quarantine/mgnrega_district_monthly_up_drift_report.txt`, which lists the difference.
+**Halted runs:** any halt, whether from encoding, layout, or drift, deletes any existing processed output and writes `data/quarantine/mgnrega_district_monthly_up_halt_report.txt`, which names the problem.
 
 **Exit codes:** 0 for a clean run, 1 for a halted run, 2 for a run that completed with rejected rows, 3 for a run that completed with a new column flagged.
 
