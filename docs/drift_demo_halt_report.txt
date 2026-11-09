@@ -1,0 +1,3 @@
+drift: expected columns are missing from the file:
+  - Total_Exp (possibly renamed to 'Total_Expenditure')
+columns not in the expected schema: Total_Expenditure
