@@ -40,7 +40,7 @@ The pipeline accepts UTF-8 files, with or without a byte order mark (BOM). The B
 ## Open decisions
 
 - **Drift testing on real data.** Drift detection needs a second release of this dataset. Until one is found, use a test fixture with one renamed column.
-- **Multi-state data.** The project's stated problem includes misspelled state names, and this file doesn't show that. Decide whether to add a second, multi-state file before the README describes the project's full scope.
+
 
 ## Output contract
 
